@@ -12,12 +12,13 @@ app.listen(3000, ()=>{ console.log('server is successfully running on port 3000.
 //     response.send('Welocme To Home Page');
 // });
 
-app.use("/user",(res,response)=>{
-    
-    response.send('HAHAHAAHAHHAHA');
-});
+// app.use("/user",(res,response)=>{
 
-app.get("/user", (req,res)=>{
+//     response.send('HAHAHAAHAHHAHA');
+// });
+
+app.get("/user/:UserId/:password", (req,res)=>{
+    console.log(req.params);
     res.send( { firstName:"Siva", lastName:"Konderu" });
 })
 
