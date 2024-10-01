@@ -8,9 +8,23 @@ app.listen(3000, ()=>{ console.log('server is successfully running on port 3000.
 
 // Request handler
 
-app.use("/",(res,response)=>{
-    response.send('Welocme To Home Page');
+// app.use("/",(res,response)=>{
+//     response.send('Welocme To Home Page');
+// });
+
+app.use("/user",(res,response)=>{
+    
+    response.send('HAHAHAAHAHHAHA');
 });
+
+app.get("/user", (req,res)=>{
+    res.send( { firstName:"Siva", lastName:"Konderu" });
+})
+
+app.post("/user", (req,res)=>{
+    console.log("Save Data to Database");
+    res.send( "Data Successfully saved to Database");
+})
 
 app.use("/test",(res,response)=>{
     response.send('Hello from Server');
